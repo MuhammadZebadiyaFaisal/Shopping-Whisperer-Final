@@ -5,19 +5,45 @@ import time
 
 st.set_page_config(page_title="Shopping Whisperer", page_icon="🛍️", layout="centered")
 
+# 2. Advanced Professional Styling
 st.markdown("""
 <style>
-.trust-high { color: #22c55e; font-size: 72px; font-weight: 800; text-align: center; }
-.trust-mid  { color: #f59e0b; font-size: 72px; font-weight: 800; text-align: center; }
-.trust-low  { color: #ef4444; font-size: 72px; font-weight: 800; text-align: center; }
-.card  { padding: 10px 16px; border-radius: 10px; margin: 6px 0; font-size: 15px; }
-.red   { background: #fee2e2; color: #991b1b; }
-.green { background: #dcfce7; color: #166534; }
+    /* Main Background & Fonts */
+    .main { background-color: #f8fafc; }
+    
+    /* Trust Score Branding */
+    .trust-high { color: #15803d; font-size: 80px; font-weight: 900; text-align: center; margin-bottom: -10px; }
+    .trust-mid  { color: #b45309; font-size: 80px; font-weight: 900; text-align: center; margin-bottom: -10px; }
+    .trust-low  { color: #b91c1c; font-size: 80px; font-weight: 900; text-align: center; margin-bottom: -10px; }
+    
+    /* Feature Cards */
+    .card { padding: 15px; border-radius: 12px; margin: 8px 0; border: 1px solid #e2e8f0; line-height: 1.5; }
+    .red { background: #fff1f2; color: #991b1b; border-left: 5px solid #ef4444; }
+    .green { background: #f0fdf4; color: #166534; border-left: 5px solid #22c55e; }
+    
+    /* Footer Styling */
+    .footer { position: fixed; left: 0; bottom: 0; width: 100%; background-color: white; color: #64748b; text-align: center; padding: 10px; border-top: 1px solid #e2e8f0; font-size: 12px; z-index: 100; }
 </style>
 """, unsafe_allow_html=True)
 
+# 3. Sidebar (Authority & Branding)
+with st.sidebar:
+    st.image("https://cdn-icons-png.flaticon.com/512/1162/1162499.png", width=80)
+    st.title("Mission Control")
+    st.markdown("### *Bridging the gap between doubt and digital trust.*")
+    st.divider()
+    st.info("""
+    **How it works:**
+    Our AI scrapes real-time data, analyzes seller history, and compares product patterns against known scam databases.
+    """)
+    st.caption("© 2026 M.Zebadiya Faisal")
+    
 st.markdown("# 🛍️ Shopping Whisperer")
-st.markdown("**Paste a product link — we'll tell you if it's legit.**")
+st.markdown("""
+**Paste any product link and let AI inspect trust signals instantly**  
+*Shop smarter, shop safer—one link at a time.*
+""")
+st.info("🔍 We'll tell you -if it's legit or a scam?")
 st.divider()
 
 url = st.text_input("🔗 Product URL", placeholder="https://www.amazon.com/... or daraz.pk/...")
@@ -141,5 +167,7 @@ GREEN LIGHTS:
         st.divider()
         with st.expander("🧪 Raw AI Response (for testing)"):
             st.write(raw_text)
-
-        st.caption("🤖 Powered by Shopping Whisperer AI")
+st.write("---")
+st.caption("🤖 Powered by Shopping Whisperer AI")
+st.caption("Developed By M.Zebadiya Faisal")
+st.caption("© 2026 M.Zebadiya Faisal")
