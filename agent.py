@@ -11,7 +11,7 @@ import streamlit as st
 os.environ["GROQ_API_KEY"] = st.secrets["GROQ_API_KEY"]
 
 # 2. LOAD DATA (Looks inside your 'shopping_data' folder)
-loader = DirectoryLoader('./shopping_data/', glob="./*.txt", loader_cls=TextLoader)
+loader = DirectoryLoader('shopping_data', glob="*.txt", loader_cls=TextLoader)
 docs = loader.load()
 
 # 3. SPLIT TEXT (RAG Step)
